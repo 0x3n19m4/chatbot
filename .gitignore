@@ -3,3 +3,5 @@ __pycache__
 data/.ipynb_checkpoints
 notebook/.ipynb_checkpoints
 venv
+env
+.env
