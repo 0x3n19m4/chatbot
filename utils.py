@@ -1,13 +1,13 @@
 import streamlit as st
 import pinecone      
 import openai
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 from sentence_transformers import SentenceTransformer
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 pinecone.init(      
-    api_key='70ed5d09-f5a0-4305-a5ee-845251348d13',      
+    api_key=os.getenv("PINECONE_API_KEY") ,      
     environment='us-west4-gcp-free'      
 )      
 index = pinecone.Index('indian-budget-chatbot')
